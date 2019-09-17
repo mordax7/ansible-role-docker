@@ -1,0 +1,36 @@
+---
+
+- name: check if docker is already installed
+  stat: path=/usr/bin/docker
+  register: pihole_docker_bin
+
+- name: download docker installer
+  get_url:
+    url: https://get.docker.com/
+    dest: /tmp/get-docker.sh
+    mode: +x
+  when:
+    - not pihole_docker_bin.stat.exists
+
+- name: execute the docker installerasd
+  shell: /tmp/get-docker.sh
+  when:
+    - not pihole_docker_bin.stat.exists
+
+- name: remove the docker installer
+  file:
+    path: /tmp/get-docker.sh
+    state: absent
+  when:
+    - not pihole_docker_bin.stat.exists
+
+- name: ensure group "docker" exists
+  group:
+    name: docker
+    state: present
+
+- name: add user {{ ansible_user_id }} to "docker" group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: "yes"

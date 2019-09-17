@@ -1,0 +1,20 @@
+---
+
+galaxy_info:
+  author: xMordax
+  description: Docker for Linux
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: Debian
+      versions:
+        - debian9
+        - buster
+    - name: CentOS
+      versions:
+        - 7
+    - name: Ubuntu
+      versions:
+        - bionic64/ubuntu1804
+  galaxy_tags: []
+dependencies: []
