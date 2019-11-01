@@ -1,4 +1,4 @@
-Ansible Role Docker
+Ansible Role: Docker
 =========
 
 I don't remember anymore how this role got created, either its community made and modified for my own purpose or I wrote
@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: all
       roles:
-         - role: xMordax.docker
+         - role: xmordax.docker
 
 License
 -------
