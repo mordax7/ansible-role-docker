@@ -12,8 +12,8 @@
   when:
     - not pihole_docker_bin.stat.exists
 
-- name: execute the docker installerasd
-  shell: /tmp/get-docker.sh
+- name: execute the docker installer
+  script: /tmp/get-docker.sh
   when:
     - not pihole_docker_bin.stat.exists
 
