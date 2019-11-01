@@ -1,20 +1,39 @@
 ---
 
 galaxy_info:
+  role_name: Docker
   author: xMordax
   description: Docker for Linux
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
   platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Fedora
+      versions:
+        - all
     - name: Debian
       versions:
-        - debian9
+        - wheezy
+        - jessie
+        - stretch
         - buster
-    - name: CentOS
-      versions:
-        - 7
     - name: Ubuntu
       versions:
-        - bionic64/ubuntu1804
-  galaxy_tags: []
-dependencies: []
+        - precise
+        - trusty
+        - xenial
+        - bionic
+    - name: FreeBSD
+      versions:
+        - 10.2
+  galaxy_tags:
+    - development
+    - system
+    - docker
+    - compose
+    - containers
+    - orchestration
+    - server
